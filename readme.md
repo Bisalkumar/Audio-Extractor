@@ -9,7 +9,7 @@ This project uses the following Python modules:
 - `moviepy.editor`
 - `tkinter`
 
-Before using the script, you should install the required external modules using pip: pip install moviepy tkinter
+Before using the script, you should install the required external modules using pip: pip install moviepy tk
 
 
 ## Features
