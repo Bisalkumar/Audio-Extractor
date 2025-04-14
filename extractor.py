@@ -1,8 +1,8 @@
 import os
-import moviepy.editor
+import moviepy
 from tkinter import Tk, filedialog, simpledialog, messagebox
 
-# Ensure 'input' and 'output' directories exist
+
 if not os.path.exists("input"):
     os.makedirs("input")
 if not os.path.exists("output"):
@@ -10,7 +10,7 @@ if not os.path.exists("output"):
 
 def extract_audio_from_video(video_path, audio_path):
     try:
-        video = moviepy.editor.VideoFileClip(video_path)
+        video = moviepy.VideoFileClip(video_path)
         audio = video.audio
         audio.write_audiofile(audio_path)
         return True
@@ -20,13 +20,12 @@ def extract_audio_from_video(video_path, audio_path):
 
 def main():
     root = Tk()
-    root.withdraw()  # Hide the main window
+    root.withdraw()
     
     video_path = filedialog.askopenfilename(title="Select the video file", filetypes=[("Video Files", "*.mp4;*.avi;*.mkv;*.flv;*.mov")])
     if not video_path:
         return
 
-    # Save the selected video file to the 'input' directory
     dest_path = os.path.join("input", os.path.basename(video_path))
     with open(video_path, "rb") as fsrc:
         with open(dest_path, "wb") as fdst:
@@ -34,7 +33,6 @@ def main():
 
     audio_format = simpledialog.askstring("Output Format", "Enter desired audio format (e.g. mp3, wav):", initialvalue="mp3")
 
-    # Set the audio path in the 'output' directory with the same filename as the video (but different extension)
     output_filename = os.path.splitext(os.path.basename(dest_path))[0] + f".{audio_format}"
     audio_path = os.path.join("output", output_filename)
     

@@ -6,7 +6,7 @@ Extract audio from your favorite videos using a simple GUI.
 
 This project uses the following Python modules:
 - `os`
-- `moviepy.editor`
+- `moviepy`
 - `tkinter`
 
 Before using the script, you should install the required external modules using pip: pip install moviepy tk
@@ -22,7 +22,8 @@ Before using the script, you should install the required external modules using 
 ## Getting Started
 
 1. Clone this repository to your local machine: git clone https://github.com/Bisalkumar/Audio-Extractor.git
-2. Navigate to the project directory and install the required modules.
+2. Navigate to the project directory and install the required modules(pip install -r requirements.txt
+).
 3. Run the script to start the application.
 
 ## How to Use
